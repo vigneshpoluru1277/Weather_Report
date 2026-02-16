@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Weather Report App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <header class="header">
+        <div>
+          <h1>Weather Report</h1>
+          <p class="sub">Search a city to see current weather</p>
+        </div>
+
+        <div class="toggles">
+          <button id="unitBtn" class="btn secondary" aria-label="Toggle units">
+            °C
+          </button>
+          <button id="themeBtn" class="btn secondary" aria-label="Toggle theme">
+            🌙
+          </button>
+        </div>
+      </header>
+
+      <form class="search" id="searchForm">
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Enter city name (e.g., Hyderabad)"
+          autocomplete="off"
+        />
+        <button class="btn" type="submit">Search</button>
+      </form>
+
+      <section class="status">
+        <div id="loading" class="pill hidden">Loading…</div>
+        <div id="error" class="pill error hidden"></div>
+      </section>
+
+      <main class="card hidden" id="card">
+        <div class="top">
+          <div>
+            <div class="place" id="place">—</div>
+            <div class="time" id="time">—</div>
+          </div>
+          <div class="icon" id="icon">⛅</div>
+        </div>
+
+        <div class="tempRow">
+          <div class="temp" id="temp">—</div>
+          <div class="desc" id="desc">—</div>
+        </div>
+
+        <div class="grid">
+          <div class="metric">
+            <div class="label">Feels like</div>
+            <div class="value" id="feels">—</div>
+          </div>
+          <div class="metric">
+            <div class="label">Humidity</div>
+            <div class="value" id="humidity">—</div>
+          </div>
+          <div class="metric">
+            <div class="label">Wind</div>
+            <div class="value" id="wind">—</div>
+          </div>
+          <div class="metric">
+            <div class="label">Condition</div>
+            <div class="value" id="condition">—</div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        Data: Open-Meteo • No API key required
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
